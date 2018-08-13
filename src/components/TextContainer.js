@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
 export default class TextContainer extends Component {
-  constructor() {
+  constructor() 
+  {
     super()
-    this.state = {
+    this.state = 
+    {
       text: ''
     }
+
+    this.updateText = this.updateText.bind(this);
   }
 
   updateText(e) {
@@ -18,12 +22,18 @@ export default class TextContainer extends Component {
     return (
       <div className="textContainer">
         <textarea 
-          // style={  }
+          style=
+          {{
+            fontSize: this.props.fontSize, 
+            fontFamily: this.props.fontFamily, 
+            color: this.props.fontColor
+          }}
           onChange={this.updateText}
           value={this.state.text} 
           placeholder='Start typing your thoughts here!'
           cols="90"
-          rows="30">
+          rows="30"
+        >
         </textarea>
       </div>
     )
